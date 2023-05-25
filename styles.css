@@ -1,3 +1,10 @@
 nav a {
    text-decoration: none;
+
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 150px);
 }
