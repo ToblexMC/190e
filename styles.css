@@ -1,7 +1,9 @@
 body {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr auto;
+    grid-gap: 20px;
+    background-color: lightgrey;
   }
   
   nav {
@@ -12,19 +14,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    grid-column: 1/3; 
+    grid-column: 1/3;
   }
   
   .navContainer {
     display: flex;
-    justify-content: center; 
-    grid-column: 1/2; 
+    justify-content: center;
+    grid-column: 1/2;
   }
   
   .navHelp {
     display: flex;
-    justify-content: center; 
-    grid-column: 2/3; 
+    justify-content: center;
+    grid-column: 2/3;
   }
   
   nav a {
@@ -33,7 +35,6 @@ body {
     color: white;
     font-size: 30px;
   }
-
   
   .body1 {
     background-color: #1f2125;
@@ -46,8 +47,30 @@ body {
     align-items: center;
     grid-column: 1/2;
     grid-row: 2/3;
-    margin: 15px 0;
     padding: 15px;
     font-size: 30px;
+  }
+  
+  .gallery {
+    background-color: #1f2125;
+    border: 5px solid #224968;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 1.4);
+    grid-column: 2/3;
+    grid-row: 2/4; /* Extend the grid row to occupy more rows */
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+  }
+  
+  .gallery img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
   }
   
