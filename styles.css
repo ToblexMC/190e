@@ -31,6 +31,7 @@ body {
   }
   
   nav a {
+    text-align: center;
     margin: 15px;
     text-decoration: none;
     color: white;
@@ -91,7 +92,7 @@ body {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 1.4);
     grid-column: 3/4;
     grid-row: 2/5; 
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     color: white;
     font-size: 30px;
@@ -102,6 +103,9 @@ body {
   }
   
   .gallery img {
+    border: 5px solid #224968;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .8);
     width: 200px;
     height: auto;
     margin: 10px;
@@ -114,7 +118,7 @@ body {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 1.4);
     grid-column: 1/2;
     grid-row: 2/5; 
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     color: white;
     font-size: 30px;
