@@ -1,3 +1,12 @@
+@font-face {
+  font-family: RaceSport;
+  src: url(Fonts/RaceSport.ttf);
+}
+
+@font-face {
+  font-family: CenturyGothic;
+  src: url(Fonts/CenturyGothic.ttf);
+}
 body {
     margin: 10px;
     color: white;
@@ -30,6 +39,7 @@ body {
   }
   
   nav a {
+    font-family: RaceSport;
     color: white;
     grid-column: 3/4;
     text-align: center;
@@ -39,7 +49,8 @@ body {
   }
 
   nav a:hover {
-    color: lightgray;
+    color: #316691;
+    
   }
   
   .body1 {
@@ -87,11 +98,11 @@ body {
 .body3,
 .body4,
 .gallery,
-.news,
-.footer {
+.news {
+  font-family: CenturyGothic;
   background-color: rgba(0, 0, 0, .50); 
   border: 5px solid #224968;
-  border-radius: 8px;
+  border-radius: 10px;
   max-width: 90%;
   max-height: 90%;
   font-size: 20px;
@@ -100,9 +111,10 @@ body {
 }
 
   .gallery {
+    font-family: RaceSport;
     grid-column: 4/5;
     grid-row: 2/7; 
-    padding: 0px;
+    padding: 5px;
     text-align: center;
     font-size: 20px;
     display: flex;
@@ -136,6 +148,7 @@ body {
   }
 
   .news {
+    font-family: RaceSport;
     grid-column: 2/3;
     grid-row: 2/7; 
     padding: 5px;
@@ -150,12 +163,9 @@ body {
   .footer {
     grid-column: 2/5;
     grid-row: 6/7; 
-    padding: 0px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: visible;
+    background-color: rgba(0, 0, 0, .50); 
+   border: 5px solid #224968;
+   border-radius: 8px;
+   
   }
   
