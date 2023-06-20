@@ -92,6 +92,10 @@ body {
       transform: translateY(0);
     }
   }
+
+  #currentTab {
+    color: #316691;
+  }
   
   .body1 {
     display: flex;
