@@ -12,7 +12,7 @@ body {
     color: white;
     display: grid;
     grid-template-columns: 1fr 2fr 5fr 2fr 1fr;
-    grid-template-rows: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-rows: 100px 3fr 3fr 3fr 3fr 100px;
     grid-gap: 20px;
     background-color: white;
     background-image: url(/Images/background1.png);
@@ -212,4 +212,43 @@ body {
    border-radius: 8px;
    
   }
+
+  #start.collapse,
+  #dtmHistory.collapse {
+    max-height: 100px;
+    overflow: hidden;
+  }
   
+  #start.expanded,
+  #dtmHistory.expanded {
+    max-height: none;
+  }
+  
+  .paragraph-wrapper {
+    position: relative;
+  }
+  
+  .expandable-paragraph {
+    font-family: CenturyGothic;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; 
+  }
+  
+  .button-read-more-less {
+    background-color: #224968;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-read-more-less:hover {
+    background-color: #316691;
+  }

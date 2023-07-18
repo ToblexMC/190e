@@ -4,6 +4,44 @@
     <title>190E | Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+    function toggleText(elementId) {
+        var paragraphWrapper = document.getElementById(elementId);
+        var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
+
+        if (paragraphWrapper.classList.contains("expanded")) {
+            paragraphWrapper.classList.remove("expanded");
+            readMoreBtn.textContent = "Read More";
+        } else {
+            paragraphWrapper.classList.add("expanded");
+            readMoreBtn.textContent = "Read Less";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var paragraphs = document.querySelectorAll(".expandable-paragraph");
+
+        paragraphs.forEach(function (paragraph) {
+            var originalText = paragraph.textContent;
+            var truncatedText = originalText.slice(0, 1500); // You can adjust the character limit here
+
+            if (paragraph.scrollHeight > paragraph.clientHeight) {
+                paragraph.textContent = truncatedText;
+                var elementId = paragraph.id;
+                var readMoreBtn = document.createElement("button");
+                readMoreBtn.textContent = "Read More";
+                readMoreBtn.className = "button-read-more-less"; 
+                readMoreBtn.id = elementId + "-readMoreBtn";
+                readMoreBtn.onclick = function () {
+                    toggleText(elementId);
+                };
+                paragraph.insertAdjacentElement("afterend", readMoreBtn);
+            }
+        });
+    });
+</script>
+
 <body>
     <nav>
             <a href="index.html">The 190E</a>
@@ -23,38 +61,52 @@
             <a href="help.html">Help</a>
     </nav>
 
-
     <div id="theStart" class="body1">
-    	
-        </div>  
-    
-    <div id="variations" class="body2">
-      
+        <div class="paragraph-wrapper">
+            <p id="start" class="expandable-paragraph collapse">
+                The design of the Mercedes-Benz 190E was a collaborative effort that involved several key individuals and teams within the company. The project was led by Mercedes-Benz's Chief Engineer at the time, Dr. Werner Breitschwerdt, who played a crucial role in overseeing the development of the car. The styling and design work were primarily carried out by a team of designers led by Bruno Sacco, Mercedes-Benz's head of design during that era. The design process took place at Mercedes-Benz's headquarters in Stuttgart, Germany, where the company's design center was located. This center housed a dedicated team of talented designers and engineers who worked together to create the iconic look of the 190E.
+
+                Bruno Sacco and his team focused on creating a timeless and aerodynamic design for the 190E. They utilized the latest in computer-aided design (CAD) technology and conducted extensive wind tunnel testing to optimize the car's aerodynamics. The final result was a sleek and elegant silhouette that not only looked visually stunning but also contributed to the car's overall performance and fuel efficiency.
+                
+                The interior design was equally important, and Mercedes-Benz's team put a strong emphasis on ergonomics, luxury, and attention to detail. High-quality materials, exquisite craftsmanship, and cutting-edge features were incorporated into the 190E's interior to ensure a luxurious and comfortable driving experience.
+                
+                The Mercedes-Benz 190E was officially unveiled at the 1982 Geneva Motor Show, and it quickly became a symbol of automotive excellence and engineering prowess. Its enduring popularity and legacy are a testament to the dedication and vision of the talented individuals who designed and developed this remarkable compact executive car.
+            </p>
         </div>
-  
-    <div id="dtm" class="body3">
+    </div>
+
+    <div id="dtm" class="body2">
+        <div class="paragraph-wrapper">
+            <p id="dtmHistory" class="expandable-paragraph collapse">
+                The Mercedes-Benz 190E also made a significant impact on the motorsport world, particularly in the Deutsche Tourenwagen Masters (DTM) racing series. The DTM is a prestigious touring car championship that features highly competitive racing among various automobile manufacturers.
+
+                In the 1980s and 1990s, the Mercedes-Benz 190E 2.3-16 was a dominant force in DTM racing. This specially modified version of the 190E was designed for motorsport and featured a powerful 2.3-liter four-cylinder engine producing around 185 horsepower. The car's aerodynamic body kit and suspension setup were optimized for high-speed racing on tracks throughout Europe.
+
+                Notably, the 190E 2.3-16 achieved remarkable success in DTM racing, securing numerous victories and championships for Mercedes-Benz. Its competitive performance and distinctive livery made it a fan-favorite and an iconic representation of Mercedes-Benz's commitment to motorsport excellence.
+
+                The legacy of the 190E in DTM racing lives on, and its achievements continue to be celebrated by motorsport enthusiasts and fans of the Mercedes-Benz brand.
+            </p>
+        </div>
+    </div>
+    
+    <div id="variations" class="body3">
             
-        </div>
+    </div>
     
-        <div id="theEnd" class="body4">
+    <div id="theEnd" class="body4">
              
-            </div>
+    </div>
 
     <div class="gallery">
         <div class="gallText">Gallery</div>
-      
     </div>
 
     <div class="news">
-
         Temp
-
     </div>
 
     <div class="footer">
         Temp Text.
     </div>
-
-
 </body>
 </html>
