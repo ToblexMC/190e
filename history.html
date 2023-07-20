@@ -69,7 +69,7 @@
 
   <div id="theEnd" class="body4">
     <div class="paragraph-wrapper">
-      <p id="endText" class="expandable-paragraph">
+      <p id="endText" class="expandable-paragraph collapse">
         The Mercedes-Benz 190E had a successful production run that lasted until the late 1990s. However, as the automotive industry evolved and new technologies emerged, the time came for the 190E to be replaced by a new generation of Mercedes-Benz models.
     
         In 1997, Mercedes-Benz introduced the C-Class as the successor to the 190E. The C-Class retained many of the qualities that made the 190E a beloved classic, including its compact size, luxurious interior, and emphasis on safety and performance.
@@ -113,7 +113,7 @@
 
       paragraphs.forEach(function (paragraph) {
         var originalText = paragraph.textContent;
-        var truncatedText = originalText.slice(0, 1500);
+        var truncatedText = originalText.slice(0, 2000);
 
         if (paragraph.scrollHeight > paragraph.clientHeight) {
           paragraph.textContent = truncatedText;
