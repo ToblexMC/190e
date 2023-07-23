@@ -1,15 +1,137 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-    <title>190E | Home</title>
-    <link rel="stylesheet" href="styles.css">
-    </head>
+  <title>190E | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<nav>
+<script>
+  // JavaScript function to toggle text expansion/collapse
+  function toggleText(elementId) {
+    var paragraphWrapper = document.getElementById(elementId);
+    var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
 
+    if (paragraphWrapper.classList.contains("expanded")) {
+      // If the paragraph is expanded, collapse it
+      paragraphWrapper.classList.remove("expanded");
+      readMoreBtn.textContent = "Read More";
+    } else {
+      // If the paragraph is collapsed, expand it
+      paragraphWrapper.classList.add("expanded");
+      readMoreBtn.textContent = "Read Less";
+    }
+  }
+
+  // JavaScript event listener to set up text expansion/collapse
+  document.addEventListener("DOMContentLoaded", function () {
+    var paragraphs = document.querySelectorAll(".expandable-paragraph");
+
+    paragraphs.forEach(function (paragraph) {
+      var originalText = paragraph.textContent;
+      var truncatedText = originalText.slice(0, 2000);
+
+      if (paragraph.scrollHeight > paragraph.clientHeight) {
+        // If the paragraph has overflow, truncate it and add a Read More button
+        paragraph.textContent = truncatedText;
+        var elementId = paragraph.id;
+        var readMoreBtn = document.createElement("button");
+        readMoreBtn.textContent = "Read More";
+        readMoreBtn.className = "button-read-more-less";
+        readMoreBtn.id = elementId + "-readMoreBtn";
+        readMoreBtn.onclick = function () {
+          toggleText(elementId);
+        };
+
+        var readMoreContainer = document.createElement("div");
+        readMoreContainer.className = "read-more-container";
+        readMoreContainer.appendChild(readMoreBtn);
+        paragraph.parentNode.insertBefore(readMoreContainer, paragraph.nextSibling);
+      }
+    });
+  });
+  </script>
+
+<body>
+  <nav>
     <a href="index.html">The 190E</a>
-    <a href="history.html">History</a>
-    <a href="mods.html">Mods</a>
+
+    <div class="dropdown">
+        <!--when hover over it drops down-->
+      <span class="dropdown-text"><a  href="history.html">History</a></span>
+      <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
+        <a href="#theStart">The Start</a>
+        <a href="#dtm">DTM</a>
+        <a href="#variations">EVO</a>
+        <a href="#theEnd">The End</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+        <!--when hover over it drops down-->
+      <span class="dropdown-text"><a id="currentTab" href="mods.html">Mods</a></span>
+      <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
+        <a href="#suspension">Suspension</a>
+        <a href="#exhaust">Exhaust</a>
+        <a href="#wheels">Wheels</a>
+        <a href="#bodykits">Bodykits</a>
+      </div>
+    </div>
+  
     <a href="maintain.html">Maintain</a>
     <a href="help.html">Help</a>
+  </nav>
 
-</nav>
+  <div id="suspension" class="body1">
+    <div class="paragraph-wrapper">
+      <p id="start" class="expandable-paragraph collapse">
+        
+      </p>
+    </div>
+  </div>
+
+  <div id="exhaust" class="body2">
+    <div class="paragraph-wrapper">
+      <p id="dtmHistory" class="expandable-paragraph collapse">
+
+      </p>
+    </div>
+  </div>
+
+  <div id="wheels" class="body3">
+    <div class="paragraph-wrapper">
+      <p id="variationsText" class="expandable-paragraph collapse">
+
+      </p>
+    </div>
+  </div>
+
+  <div id="bodykits" class="body4">
+    <div class="paragraph-wrapper">
+        <p id="Sportline" class="expandable-paragraph collapse">
+       
+    </p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <div class="gallText">Gallery</div>
+     <a href="http://127.0.0.1:5500/Images/.jpg"><img src=".jpg"></a> <!--sourced by-->
+
+
+</div>
+
+  <div class="news">
+
+  </div>
+
+  <div class="footer">
+    Temp Text.
+  </div>
+
+
+</body>
+
+</html>
