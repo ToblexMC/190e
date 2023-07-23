@@ -262,13 +262,15 @@ body {
 }
 
 .body4 .expandable-paragraph {
-  max-height: 100px; 
+  max-height: 25px; 
   overflow: hidden;
+
 }
 
 .body4 .expandable-paragraph.expanded {
   max-height: none;
 }
+
 
 .login-container {
   grid-column: 2 / span 3;
@@ -329,4 +331,32 @@ body {
 
 .button-read-more-less:hover {
   background-color: #316691;
+}
+
+
+
+
+table {
+  width: 80%;
+  height: 60%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Style the table headers */
+th {
+  background-color: rgba(0, 0, 0, .50);   
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Style the table data cells */
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Style alternating rows (optional) */
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, .50); 
 }

@@ -6,13 +6,61 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+  // JavaScript function to toggle text expansion/collapse
+  function toggleText(elementId) {
+    var paragraphWrapper = document.getElementById(elementId);
+    var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
+
+    if (paragraphWrapper.classList.contains("expanded")) {
+      // If the paragraph is expanded, collapse it
+      paragraphWrapper.classList.remove("expanded");
+      readMoreBtn.textContent = "Read More";
+    } else {
+      // If the paragraph is collapsed, expand it
+      paragraphWrapper.classList.add("expanded");
+      readMoreBtn.textContent = "Read Less";
+    }
+  }
+
+  // JavaScript event listener to set up text expansion/collapse
+  document.addEventListener("DOMContentLoaded", function () {
+    var paragraphs = document.querySelectorAll(".expandable-paragraph");
+
+    paragraphs.forEach(function (paragraph) {
+      var originalText = paragraph.textContent;
+      var truncatedText = originalText.slice(0, 2000);
+
+      if (paragraph.scrollHeight > paragraph.clientHeight) {
+        // If the paragraph has overflow, truncate it and add a Read More button
+        paragraph.textContent = truncatedText;
+        var elementId = paragraph.id;
+        var readMoreBtn = document.createElement("button");
+        readMoreBtn.textContent = "Read More";
+        readMoreBtn.className = "button-read-more-less";
+        readMoreBtn.id = elementId + "-readMoreBtn";
+        readMoreBtn.onclick = function () {
+          toggleText(elementId);
+        };
+
+        var readMoreContainer = document.createElement("div");
+        readMoreContainer.className = "read-more-container";
+        readMoreContainer.appendChild(readMoreBtn);
+        paragraph.parentNode.insertBefore(readMoreContainer, paragraph.nextSibling);
+      }
+    });
+  });
+  </script>
+
 <body>
   <nav>
     <a href="index.html">The 190E</a>
 
     <div class="dropdown">
+        <!--when hover over it drops down-->
       <span class="dropdown-text"><a id="currentTab" href="history.html">History</a></span>
       <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
         <a href="#theStart">The Start</a>
         <a href="#dtm">DTM</a>
         <a href="#variations">EVO</a>
@@ -69,22 +117,92 @@
 
   <div id="theEnd" class="body4">
     <div class="paragraph-wrapper">
-      <p id="endText" class="expandable-paragraph collapse">
-        The Mercedes-Benz 190E had a successful production run that lasted until the late 1990s. However, as the automotive industry evolved and new technologies emerged, the time came for the 190E to be replaced by a new generation of Mercedes-Benz models.
+          
+        The Mercedes-Benz 190E offered several specific models and engine options that catered to different driving preferences and performance levels.
+        <p id="Sportline" class="expandable-paragraph collapse">
+        Sportline: The Mercedes-Benz 190E Sportline was a special variant aimed at enhancing the car's sporty driving characteristics. It featured sport-tuned suspension, firmer springs, and upgraded shock absorbers, providing improved handling and responsiveness on the road. The Sportline edition also boasted distinctive alloy wheels and sportier exterior and interior trim, giving it a more aggressive and athletic appearance.
+        </p>
+
+        <p id="engine" class="expandable-paragraph collapse">
+        Engine Options:
+        <table>
+            <tr>
+                <th>Displacement</th>
+                <th>Configiration</th>
+                <th>Top Speed</th>
+                <th>Horsepower</th>
+                <th>Model</th>
     
-        In 1997, Mercedes-Benz introduced the C-Class as the successor to the 190E. The C-Class retained many of the qualities that made the 190E a beloved classic, including its compact size, luxurious interior, and emphasis on safety and performance.
+            </tr>
+            <tr>
+                <td>1997</td>
+                <td>I4 8V</td>
+                <td>196km/h</td>
+                <td>120</td>
+                <td>190e 2.0</td>
+            </tr>
+    
+            <tr>
+                <td>2298</td>
+                <td>I4 8V</td>
+                <td>200km/h</td>
+                <td>134</td>
+                <td>190e 2.3</td>
+            </tr>
+    
+            <tr>
+                <td>2597</td>
+                <td>I6 12V</td>
+                <td>214km/h</td>
+                <td>164</td>
+                <td>190e 2.6</td>
+            </tr>
 
-        The last model of the 190E rolled off the production line in 1998, marking the end of an era for this iconic compact executive car. While the 190E's production came to a close, its legacy continued to influence future Mercedes-Benz models and set a standard for quality and engineering excellence.
+            <tr>
+                <td>2498</td>
+                <td>I4 16V P/P</td>
+                <td>245km/h</td>
+                <td>222</td>
+                <td>190e 2.5-16 AMG</td>
+            </tr>
 
-        Today, the Mercedes-Benz 190E remains a sought-after collector's car and is cherished by automotive enthusiasts worldwide for its timeless design and historical significance.
-
+            <tr>
+                <td>1997</td>
+                <td>I4 8V Diesel</td>
+                <td>161km/h</td>
+                <td>71</td>
+                <td>190e D (2.0)</td>
+            </tr>
+            <tr>
+                <td>2497</td>
+                <td>I5 10V Turbo Diesel</td>
+                <td>175km/h</td>
+                <td>93</td>
+                <td>190e D 2.5 Turbo</td>
+            </tr>
+        </table>
+        </p>
+        <p id="cosworth" class="expandable-paragraph collapse">
+        Cosworth: The Mercedes-Benz 190E 2.3-16 Cosworth was a high-performance version developed in collaboration with Cosworth, a renowned engineering firm specializing in motorsport. It featured a 2.3-liter inline-four engine with 16 valves and dual overhead camshafts, producing around 185 horsepower. The Cosworth model was specifically designed for motorsport and became a dominant force in the Deutsche Tourenwagen Masters (DTM) racing series, contributing to the 190E's motorsport legacy.
+        </p>
+        <p id="powerPack" class="expandable-paragraph collapse">
+        Power Pack: The Power Pack was an optional performance upgrade available for certain 190E models. It included various enhancements to the engine and other components, resulting in increased horsepower and torque output. The Power Pack option provided a boost in performance for enthusiasts who wanted even more driving excitement from their 190E.
+    </p>
+        These different variations and engine choices allowed customers to tailor their Mercedes-Benz 190E according to their driving preferences, whether it be for everyday commuting, spirited driving, or even competitive motorsport endeavors. The 190E's diverse lineup demonstrated Mercedes-Benz's commitment to offering a versatile and captivating driving experience for a wide range of automotive enthusiasts.
       </p>
     </div>
   </div>
 
   <div class="gallery">
     <div class="gallText">Gallery</div>
-  </div>
+    <a href="http://127.0.0.1:5500/Images/clay190.jpg"><img src="Images/clay190.jpg"></a> <!--sourced by a youtube video https://www.youtube.com/watch?v=QUPLFLbmSKk&ab_channel=OldBenz-->
+    <a href="http://127.0.0.1:5500/Images/evo2190.jpeg"><img src="Images/evo2190.jpeg"></a> <!--https://www.roadandtrack.com/news/a37373118/mercedes-benz-190e-25-16-evolution-ii-is-homologation-royalty/-->
+    <a href="http://127.0.0.1:5500/Images/dtm190.jpg"><img src="Images/dtm190.jpg"></a> <!--https://www.motor1.com/features/176593/mercedes-benz-190e-evolution-video/-->
+    <a href="http://127.0.0.1:5500/Images/sportline190.jpg"><img src="Images/sportline190.jpg"></a> <!--https://thembmarket.com/1993-mercedes-benz-190e-sportline-limited-2-->
+    <a href="http://127.0.0.1:5500/Images/pp190.jpg"><img src="Images/pp190.jpg"></a> <!--https://www.proxibid.com/Collector-Cars/1989-Mercedes-Benz-190E-2-5-16-Evolution-I-AMG-Power-Pack/lotInformation/55498525-->
+    <a href="http://127.0.0.1:5500/Images/2.316190.jpg"><img src="Images/2.316190.jpg"></a> <!--https://youtu.be/kDqZkUFKVb4-->
+
+</div>
 
   <div class="news">
     Temp
@@ -94,46 +212,7 @@
     Temp Text.
   </div>
 
-  <script>
-    function toggleText(elementId) {
-      var paragraphWrapper = document.getElementById(elementId);
-      var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
 
-      if (paragraphWrapper.classList.contains("expanded")) {
-        paragraphWrapper.classList.remove("expanded");
-        readMoreBtn.textContent = "Read More";
-      } else {
-        paragraphWrapper.classList.add("expanded");
-        readMoreBtn.textContent = "Read Less";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var paragraphs = document.querySelectorAll(".expandable-paragraph");
-
-      paragraphs.forEach(function (paragraph) {
-        var originalText = paragraph.textContent;
-        var truncatedText = originalText.slice(0, 2000);
-
-        if (paragraph.scrollHeight > paragraph.clientHeight) {
-          paragraph.textContent = truncatedText;
-          var elementId = paragraph.id;
-          var readMoreBtn = document.createElement("button");
-          readMoreBtn.textContent = "Read More";
-          readMoreBtn.className = "button-read-more-less";
-          readMoreBtn.id = elementId + "-readMoreBtn";
-          readMoreBtn.onclick = function () {
-            toggleText(elementId);
-          };
-
-          var readMoreContainer = document.createElement("div");
-          readMoreContainer.className = "read-more-container";
-          readMoreContainer.appendChild(readMoreBtn);
-          paragraph.parentNode.insertBefore(readMoreContainer, paragraph.nextSibling);
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>
