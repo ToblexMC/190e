@@ -1,60 +1,261 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>190E | Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>190E | Home</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+  // JavaScript function to toggle text expansion/collapse
+  function toggleText(elementId) {
+    var paragraphWrapper = document.getElementById(elementId);
+    var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
+
+    if (paragraphWrapper.classList.contains("expanded")) {
+      // If the paragraph is expanded, collapse it
+      paragraphWrapper.classList.remove("expanded");
+      readMoreBtn.textContent = "Read More";
+    } else {
+      // If the paragraph is collapsed, expand it
+      paragraphWrapper.classList.add("expanded");
+      readMoreBtn.textContent = "Read Less";
+    }
+  }
+
+  // JavaScript event listener to set up text expansion/collapse
+  document.addEventListener("DOMContentLoaded", function () {
+    var paragraphs = document.querySelectorAll(".expandable-paragraph");
+
+    paragraphs.forEach(function (paragraph) {
+      var originalText = paragraph.textContent;
+      var truncatedText = originalText.slice(0, 2000);
+
+      if (paragraph.scrollHeight > paragraph.clientHeight) {
+        // If the paragraph has overflow, truncate it and add a Read More button
+        paragraph.textContent = truncatedText;
+        var elementId = paragraph.id;
+        var readMoreBtn = document.createElement("button");
+        readMoreBtn.textContent = "Read More";
+        readMoreBtn.className = "button-read-more-less";
+        readMoreBtn.id = elementId + "-readMoreBtn";
+        readMoreBtn.onclick = function () {
+          toggleText(elementId);
+        };
+
+        var readMoreContainer = document.createElement("div");
+        readMoreContainer.className = "read-more-container";
+        readMoreContainer.appendChild(readMoreBtn);
+        paragraph.parentNode.insertBefore(readMoreContainer, paragraph.nextSibling);
+      }
+    });
+  });
+  </script>
+
 <body>
-    <nav>
-            <a href="index.html">The 190E</a>
+  <nav>
+    <a href="index.html">The 190E</a>
 
-            <div class="dropdown">
-                <span class="dropdown-text"><a id="currentTab" href="history.html">History</a></span>
-                <div class="dropdown-content">
-                  <a href="#theStart">The Start</a>
-                  <a href="#variations">DTM</a>
-                  <a href="#dtm">EVO</a>
-                <a href="#theEnd">The End</a>
-                </div>
-              </div>
-              
-            <a href="mods.html">Mods</a>
-            <a href="maintain.html">Maintain</a>
-            <a href="help.html">Help</a>
-    </nav>
+    <div class="dropdown">
+        <!--when hover over it drops down-->
+      <span class="dropdown-text"><a id="currentTab" href="history.html">History</a></span>
+      <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
+        <a href="#theStart">The Start</a>
+        <a href="#dtm">DTM</a>
+        <a href="#variations">EVO</a>
+        <a href="#theEnd">The End</a>
+      </div>
+    </div>
 
+    <a href="mods.html">Mods</a>
+    <a href="maintain.html">Maintain</a>
+    <a href="help.html">Help</a>
+  </nav>
 
-    <div id="theStart" class="body1">
-    	
-        </div>  
+  <div id="theStart" class="body1">
+    <div class="paragraph-wrapper">
+      <p id="start" class="expandable-paragraph collapse">
+        The design of the Mercedes-Benz 190E was a collaborative effort that involved several key individuals and teams within the company. The project was led by Mercedes-Benz's Chief Engineer at the time, Dr. Werner Breitschwerdt, who played a crucial role in overseeing the development of the car. The styling and design work were primarily carried out by a team of designers led by Bruno Sacco, Mercedes-Benz's head of design during that era. The design process took place at Mercedes-Benz's headquarters in Stuttgart, Germany, where the company's design center was located. This center housed a dedicated team of talented designers and engineers who worked together to create the iconic look of the 190E.
+
+        Bruno Sacco and his team focused on creating a timeless and aerodynamic design for the 190E. They utilized the latest in computer-aided design (CAD) technology and conducted extensive wind tunnel testing to optimize the car's aerodynamics. The final result was a sleek and elegant silhouette that not only looked visually stunning but also contributed to the car's overall performance and fuel efficiency.
+        
+        The interior design was equally important, and Mercedes-Benz's team put a strong emphasis on ergonomics, luxury, and attention to detail. High-quality materials, exquisite craftsmanship, and cutting-edge features were incorporated into the 190E's interior to ensure a luxurious and comfortable driving experience.
+        
+        The Mercedes-Benz 190E was officially unveiled at the 1982 Geneva Motor Show, and it quickly became a symbol of automotive excellence and engineering prowess. Its enduring popularity and legacy are a testament to the dedication and vision of the talented individuals who designed and developed this remarkable compact executive car.
+      </p>
+    </div>
+  </div>
+
+  <div id="dtm" class="body2">
+    <div class="paragraph-wrapper">
+      <p id="dtmHistory" class="expandable-paragraph collapse">
+        The Mercedes-Benz 190E also made a significant impact on the motorsport world, particularly in the Deutsche Tourenwagen Masters (DTM) racing series. The DTM is a prestigious touring car championship that features highly competitive racing among various automobile manufacturers.
+
+        In the 1980s and 1990s, the Mercedes-Benz 190E 2.3-16 was a dominant force in DTM racing. This specially modified version of the 190E was designed for motorsport and featured a powerful 2.3-liter four-cylinder engine producing around 185 horsepower. The car's aerodynamic body kit and suspension setup were optimized for high-speed racing on tracks throughout Europe.
+
+        Notably, the 190E 2.3-16 achieved remarkable success in DTM racing, securing numerous victories and championships for Mercedes-Benz. Its competitive performance and distinctive livery made it a fan-favorite and an iconic representation of Mercedes-Benz's commitment to motorsport excellence.
+
+        The legacy of the 190E in DTM racing lives on, and its achievements continue to be celebrated by motorsport enthusiasts and fans of the Mercedes-Benz brand.
+      </p>
+    </div>
+  </div>
+
+  <div id="variations" class="body3">
+    <div class="paragraph-wrapper">
+      <p id="variationsText" class="expandable-paragraph collapse">
+        The Mercedes-Benz 190E underwent various iterations and improvements over its production years. These variations included updates to the engine options, exterior design, interior features, and technology. Throughout its production life, the 190E remained a popular choice for customers seeking a luxurious and reliable compact executive car.
     
-    <div id="variations" class="body2">
-      
-        </div>
-  
-    <div id="dtm" class="body3">
-            
-        </div>
+        One of the notable variations was the introduction of the Mercedes-Benz 190E 2.5-16 Evolution (EVO) models. The EVO models were designed to meet the homologation requirements for participating in motorsport events, particularly in the Deutsche Tourenwagen Masters (DTM) racing series. These high-performance versions featured a more powerful engine, aerodynamic enhancements, and upgraded suspension and braking systems.
+
+        Another significant variation was the availability of different trim levels and special editions, each offering unique features and options. Some of the special editions included limited-production models with exclusive paint colors, interior finishes, and additional accessories.
+
+        The Mercedes-Benz 190E's ability to continuously evolve and adapt to changing market demands contributed to its enduring success and reputation as a beloved classic car.
+      </p>
+    </div>
+  </div>
+
+  <div id="theEnd" class="body4">
+    <div class="paragraph-wrapper">
+          
+        The Mercedes-Benz 190E offered several specific models and engine options that catered to different driving preferences and performance levels.
+        <p id="Sportline" class="expandable-paragraph collapse">
+        Sportline: The Mercedes-Benz 190E Sportline was a special variant aimed at enhancing the car's sporty driving characteristics. It featured sport-tuned suspension, firmer springs, and upgraded shock absorbers, providing improved handling and responsiveness on the road. The Sportline edition also boasted distinctive alloy wheels and sportier exterior and interior trim, giving it a more aggressive and athletic appearance.
+        </p>
+
+        <p id="engine" class="expandable-paragraph collapse">
+        Engine Options:
+        <table>
+            <tr>
+                <th>Displacement</th>
+                <th>Configiration</th>
+                <th>Top Speed</th>
+                <th>Horsepower</th>
+                <th>Model</th>
     
-        <div id="theEnd" class="body4">
-             
-            </div>
+            </tr>
+            <tr>
+                <td>1997</td>
+                <td>I4 8V</td>
+                <td>196km/h</td>
+                <td>120</td>
+                <td>190e 2.0</td>
+            </tr>
+    
+            <tr>
+                <td>2298</td>
+                <td>I4 8V</td>
+                <td>200km/h</td>
+                <td>134</td>
+                <td>190e 2.3</td>
+            </tr>
+    
+            <tr>
+                <td>2597</td>
+                <td>I6 12V</td>
+                <td>214km/h</td>
+                <td>164</td>
+                <td>190e 2.6</td>
+            </tr>
 
-    <div class="gallery">
-        <div class="gallText">Gallery</div>
-      
+            <tr>
+                <td>2498</td>
+                <td>I4 16V P/P</td>
+                <td>245km/h</td>
+                <td>222</td>
+                <td>190e 2.5-16 AMG</td>
+            </tr>
+
+            <tr>
+                <td>1997</td>
+                <td>I4 8V Diesel</td>
+                <td>161km/h</td>
+                <td>71</td>
+                <td>190e D (2.0)</td>
+            </tr>
+            <tr>
+                <td>2497</td>
+                <td>I5 10V Turbo Diesel</td>
+                <td>175km/h</td>
+                <td>93</td>
+                <td>190e D 2.5 Turbo</td>
+            </tr>
+        </table>
+        </p>
+        <p id="cosworth" class="expandable-paragraph collapse">
+        Cosworth: The Mercedes-Benz 190E 2.3-16 Cosworth was a high-performance version developed in collaboration with Cosworth, a renowned engineering firm specializing in motorsport. It featured a 2.3-liter inline-four engine with 16 valves and dual overhead camshafts, producing around 185 horsepower. The Cosworth model was specifically designed for motorsport and became a dominant force in the Deutsche Tourenwagen Masters (DTM) racing series, contributing to the 190E's motorsport legacy.
+        </p>
+        <p id="powerPack" class="expandable-paragraph collapse">
+        Power Pack: The Power Pack was an optional performance upgrade available for certain 190E models. It included various enhancements to the engine and other components, resulting in increased horsepower and torque output. The Power Pack option provided a boost in performance for enthusiasts who wanted even more driving excitement from their 190E.
+    </p>
+        These different variations and engine choices allowed customers to tailor their Mercedes-Benz 190E according to their driving preferences, whether it be for everyday commuting, spirited driving, or even competitive motorsport endeavors. The 190E's diverse lineup demonstrated Mercedes-Benz's commitment to offering a versatile and captivating driving experience for a wide range of automotive enthusiasts.
+      </p>
     </div>
+  </div>
 
-    <div class="news">
+  <div class="gallery">
+    <div class="gallText">Gallery</div>
+    <a href="http://127.0.0.1:5500/Images/clay190.jpg"><img src="Images/clay190.jpg"></a> <!--sourced by a youtube video https://www.youtube.com/watch?v=QUPLFLbmSKk&ab_channel=OldBenz-->
+    <a href="http://127.0.0.1:5500/Images/evo2190.jpeg"><img src="Images/evo2190.jpeg"></a> <!--https://www.roadandtrack.com/news/a37373118/mercedes-benz-190e-25-16-evolution-ii-is-homologation-royalty/-->
+    <a href="http://127.0.0.1:5500/Images/dtm190.jpg"><img src="Images/dtm190.jpg"></a> <!--https://www.motor1.com/features/176593/mercedes-benz-190e-evolution-video/-->
+    <a href="http://127.0.0.1:5500/Images/sportline190.jpg"><img src="Images/sportline190.jpg"></a> <!--https://thembmarket.com/1993-mercedes-benz-190e-sportline-limited-2-->
+    <a href="http://127.0.0.1:5500/Images/pp190.jpg"><img src="Images/pp190.jpg"></a> <!--https://www.proxibid.com/Collector-Cars/1989-Mercedes-Benz-190E-2-5-16-Evolution-I-AMG-Power-Pack/lotInformation/55498525-->
+    <a href="http://127.0.0.1:5500/Images/2.316190.jpg"><img src="Images/2.316190.jpg"></a> <!--https://youtu.be/kDqZkUFKVb4-->
 
-        Temp
+</div>
 
-    </div>
+  <div class="news">
+    Timeline
+    <ul class="timeline">
+        <li>
+            <span class="year">1982:</span>
+            <p>Unveiled at the Geneva Motor Show, marking the beginning of its production.</p>
+        </li>
+        <li>
+            <span class="year">1983:</span>
+            <p>Made its debut in the North American market, becoming popular for its elegant design and engineering excellence.</p>
+        </li>
+        <li>
+            <span class="year">1984:</span>
+            <p>Introduced the high-performance 190E 2.3-16 Cosworth model, known for its racing heritage and impressive performance.</p>
+        </li>
+        <li>
+            <span class="year">1985:</span>
+            <p>Introduced the limited-production 190E 2.5-16 Evolution II with aggressive aerodynamics and increased power.</p>
+        </li>
+        <li>
+            <span class="year">1988:</span>
+            <p>Underwent a facelift and design updates, solidifying its status as a premium compact luxury sedan.</p>
+        </li>
+        <li>
+            <span class="year">1990:</span>
+            <p>Introduced the 190E 2.6 variant with a 2.6-liter inline-six engine for a balance of performance and comfort.</p>
+        </li>
+        <li>
+            <span class="year">Legacy and Collectibility:</span>
+            <p>Highly regarded among enthusiasts and collectors for its timeless design and engineering excellence.</p>
+        </li>
+        <li>
+            <span class="year">Classic Car Status:</span>
+            <p>Increasingly appreciated as a classic car with well-preserved examples gaining value in the automotive community.</p>
+        </li>
+        <li>
+            <span class="year">Influence on Future C-Class Models:</span>
+            <p>Played a crucial role in shaping the design and engineering principles of future C-Class models.</p>
+        </li>
+        <li>
+            <span class="year">W202, W203, and Beyond:</span>
+            <p>Following the success of the 190E, Mercedes-Benz continued its legacy with subsequent generations, including the W202 and W203, each offering their own advancements in design, technology, and performance.</p>
+        </li>
+    </ul>
 
-    <div class="footer">
-        Temp Text.
-    </div>
+  </div>
+
+  <div class="footer">
+    Temp Text.
+  </div>
 
 
 </body>
+
 </html>

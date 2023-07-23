@@ -12,7 +12,6 @@ body {
     color: white;
     display: grid;
     grid-template-columns: 1fr 2fr 5fr 2fr 1fr;
-    grid-template-rows: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-gap: 20px;
     background-color: white;
     background-image: url(/Images/background1.png);
@@ -123,7 +122,7 @@ body {
     grid-column: 3/4; 
     grid-row: 4/5; 
     padding: 15px;
-    font-size: 20px;
+
   }
   
   
@@ -148,16 +147,15 @@ body {
   border: 5px solid #224968;
   border-radius: 10px;
   max-width: 90%;
-  max-height: 90%;
+  max-height: 100%;
   font-size: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: auto;
 }
 
   .gallery {
     font-family: RaceSport;
     grid-column: 4/5;
-    grid-row: 2/7; 
+    grid-row: 2/6; 
     padding: 5px;
     text-align: center;
     font-size: 20px;
@@ -189,12 +187,13 @@ body {
 
   .gallery img:hover {
     border: 5px solid #316691;
+    
   }
 
   .news {
     font-family: RaceSport;
     grid-column: 2/3;
-    grid-row: 2/7; 
+    grid-row: 2/6; 
     padding: 5px;
     text-align: center;
     font-size: 25px;
@@ -212,4 +211,168 @@ body {
    border-radius: 8px;
    
   }
+
+  #start.collapse,
+  #dtmHistory.collapse {
+    max-height: 100px;
+    overflow: hidden;
+  }
   
+  #start.expanded,
+  #dtmHistory.expanded {
+    max-height: none;
+  }
+  
+  .paragraph-wrapper {
+    position: relative;
+  }
+  
+  .expandable-paragraph {
+    font-family: CenturyGothic;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: none;
+    font-size: 20px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; 
+  }
+  
+  .button-read-more-less {
+    background-color: #224968;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-read-more-less:hover {
+    background-color: #316691;
+  }
+
+  .body3 .expandable-paragraph {
+    max-height: 100px; 
+    overflow: hidden;
+}
+
+.body3 .expandable-paragraph.expanded {
+    max-height: none;
+}
+
+.body4 .expandable-paragraph {
+  max-height: 25px; 
+  overflow: hidden;
+
+}
+
+.body4 .expandable-paragraph.expanded {
+  max-height: none;
+}
+
+
+.login-container {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .50);
+  border: 5px solid #224968;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: CenturyGothic;
+  font-size: 20px;
+}
+
+.login-container h2 {
+  font-family: RaceSport;
+  color: white;
+  font-size: 30px;
+}
+
+.login-container label {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #224968;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #224968;
+  font-size: 18px;
+}
+
+.login-container .login-button {
+  background-color: #224968;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-container .login-button:hover {
+  background-color: #316691;
+}
+
+.read-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-read-more-less:hover {
+  background-color: #316691;
+}
+
+
+
+
+table {
+  width: 80%;
+  height: 60%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+
+th {
+  background-color: rgba(0, 0, 0, .50);   
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, .50); 
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: CenturyGothic;
+}
+
+.year {
+  font-size: 14px;
+  font-family: RaceSport;
+}
