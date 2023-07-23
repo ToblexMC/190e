@@ -2,54 +2,29 @@
 <html>
 
 <head>
-  <title>190E | Home</title>
+  <title>190E | Mods</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <script>
-  // JavaScript function to toggle text expansion/collapse
-  function toggleText(elementId) {
-    var paragraphWrapper = document.getElementById(elementId);
-    var readMoreBtn = document.getElementById(elementId + "-readMoreBtn");
+function toggleSection(sectionId) {
+  var content = document.getElementById(sectionId);
+  var contents = document.getElementsByClassName('content');
 
-    if (paragraphWrapper.classList.contains("expanded")) {
-      // If the paragraph is expanded, collapse it
-      paragraphWrapper.classList.remove("expanded");
-      readMoreBtn.textContent = "Read More";
+  for (var i = 0; i < contents.length; i++) {
+    if (contents[i].id === sectionId) {
+     
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
     } else {
-      // If the paragraph is collapsed, expand it
-      paragraphWrapper.classList.add("expanded");
-      readMoreBtn.textContent = "Read Less";
+      
+      contents[i].style.display = 'none';
     }
   }
-
-  // JavaScript event listener to set up text expansion/collapse
-  document.addEventListener("DOMContentLoaded", function () {
-    var paragraphs = document.querySelectorAll(".expandable-paragraph");
-
-    paragraphs.forEach(function (paragraph) {
-      var originalText = paragraph.textContent;
-      var truncatedText = originalText.slice(0, 2000);
-
-      if (paragraph.scrollHeight > paragraph.clientHeight) {
-        // If the paragraph has overflow, truncate it and add a Read More button
-        paragraph.textContent = truncatedText;
-        var elementId = paragraph.id;
-        var readMoreBtn = document.createElement("button");
-        readMoreBtn.textContent = "Read More";
-        readMoreBtn.className = "button-read-more-less";
-        readMoreBtn.id = elementId + "-readMoreBtn";
-        readMoreBtn.onclick = function () {
-          toggleText(elementId);
-        };
-
-        var readMoreContainer = document.createElement("div");
-        readMoreContainer.className = "read-more-container";
-        readMoreContainer.appendChild(readMoreBtn);
-        paragraph.parentNode.insertBefore(readMoreContainer, paragraph.nextSibling);
-      }
-    });
-  });
+}
   </script>
 
 <body>
@@ -84,35 +59,60 @@
     <a href="help.html">Help</a>
   </nav>
 
-  <div id="suspension" class="body1">
-    <div class="paragraph-wrapper">
-      <p id="start" class="expandable-paragraph collapse">
-        
+  <div class="body1">
+    <h3>Suspension Upgrades for Mercedes 190E</h3>
+
+    <div class="buttons-wrapper">
+      <button class="collapsible" onclick="toggleSection('loweringSprings')">Lowering Springs</button>
+      <button class="collapsible" onclick="toggleSection('coilovers')">Coilovers</button>
+      <button class="collapsible" onclick="toggleSection('shocks')">Shocks</button>
+    </div>
+
+    <div class="content" id="loweringSprings">
+      <p>
+        Lowering springs are an excellent option for improving your car's handling and appearance. They lower the center of gravity, reducing body roll, and improving cornering performance. <p> One of the well-known brands for lowering springs is H&R Springs. They offer a range of options that can provide various levels of drop and performance improvement while maintaining a comfortable ride for daily driving.<p>
+
+        H&R Springs typically provide a lowering range of around 1.0 to 2.0 inches (25mm to 50mm) depending on the specific model and variant. Please note that the exact lowering amount may vary depending on the year and version of the Mercedes 190E, so it's essential to check the specifications for the specific H&R lowering spring set designed for your vehicle.<p>
+  
+        Other reputable brands for lowering springs include Eibach and Bilstein, both known for their high-quality lowering springs. As with H&R Springs, these brands offer different spring options tailored to various driving preferences and vehicle models, providing similar lowering ranges for the Mercedes 190E.
+      </p>
+    </div>
+
+    <div class="content" id="coilovers">
+      <p>
+        Coilovers are a more versatile suspension upgrade compared to just lowering springs. They consist of
+        adjustable dampers and springs, allowing you to fine-tune your car's ride height, damping, and stiffness. If
+        you want the ability to customize your suspension setup for both street driving and track use, coilovers are
+        the way to go. One of the top choices for Mercedes 190E coilovers is KW Suspensions. Their Variant 3
+        coilovers are highly regarded for their performance and adjustability. Another excellent brand to consider
+        is Öhlins, which offers premium coilover systems for enthusiasts seeking the best in handling and ride
+        quality.
+      </p>
+    </div>
+
+    <div class="content" id="shocks">
+      <p>
+        If you want to maintain the stock ride height of your Mercedes 190E but still improve its handling, upgrading
+        the shocks is a good option. High-performance shock absorbers can provide better damping control, resulting
+        in improved stability and comfort. Bilstein is a reputable brand known for producing high-quality shocks.
+        Their B8 series is specifically designed for performance applications and can work well with lowering springs
+        to enhance your car's handling capabilities. KONI is another respected brand that offers adjustable shock
+        absorbers, allowing you to fine-tune the damping to suit your preferences.
       </p>
     </div>
   </div>
-
   <div id="exhaust" class="body2">
-    <div class="paragraph-wrapper">
-      <p id="dtmHistory" class="expandable-paragraph collapse">
 
-      </p>
     </div>
   </div>
 
   <div id="wheels" class="body3">
-    <div class="paragraph-wrapper">
-      <p id="variationsText" class="expandable-paragraph collapse">
 
-      </p>
     </div>
   </div>
 
   <div id="bodykits" class="body4">
-    <div class="paragraph-wrapper">
-        <p id="Sportline" class="expandable-paragraph collapse">
-       
-    </p>
+
     </div>
   </div>
 
