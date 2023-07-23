@@ -149,6 +149,11 @@ body {
     grid-row: 5/6; 
     padding: 15px;
     font-size: 20px;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    align-items: center;
   }
   
 .body1,
@@ -411,7 +416,8 @@ tr:nth-child(even) {
 }
 
 .body2 .buttons-wrapper button,
-.body3 .buttons-wrapper button {
+.body3 .buttons-wrapper button,
+.body4 .buttons-wrapper button {
   padding: 4px 6px;
 }
 
@@ -441,7 +447,8 @@ tr:nth-child(even) {
 
 .body1 h3,
 .body2 h3,
-.body3 h3 {
+.body3 h3,
+.body4 h3 {
   text-align: center;
   font-family: CenturyGothic;
   margin-bottom: 10px;
