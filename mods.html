@@ -1,15 +1,258 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-    <title>190E | Home</title>
-    <link rel="stylesheet" href="styles.css">
-    </head>
+  <title>190E | Mods</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<nav>
+<script>
+function toggleSection(sectionId) {
+  var content = document.getElementById(sectionId);
+  var contents = document.getElementsByClassName('content');
 
+  for (var i = 0; i < contents.length; i++) {
+    if (contents[i].id === sectionId) {
+     
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    } else {
+      
+      contents[i].style.display = 'none';
+    }
+  }
+}
+  </script>
+
+<body>
+  <nav>
     <a href="index.html">The 190E</a>
-    <a href="history.html">History</a>
-    <a href="mods.html">Mods</a>
+
+    <div class="dropdown">
+        <!--when hover over it drops down-->
+      <span class="dropdown-text"><a  href="history.html">History</a></span>
+      <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
+        <a href="#theStart">The Start</a>
+        <a href="#dtm">DTM</a>
+        <a href="#variations">EVO</a>
+        <a href="#theEnd">The End</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+        <!--when hover over it drops down-->
+      <span class="dropdown-text"><a id="currentTab" href="mods.html">Mods</a></span>
+      <div class="dropdown-content">
+        <!--when you click it goes to the paragraph that you click on-->
+        <a href="#suspension">Suspension</a>
+        <a href="#exhaust">Exhaust</a>
+        <a href="#wheels">Wheels</a>
+        <a href="#bodykits">Bodykits</a>
+      </div>
+    </div>
+  
     <a href="maintain.html">Maintain</a>
     <a href="help.html">Help</a>
+  </nav>
 
-</nav>
+  <div class="body1">
+    <h3>Suspension Upgrades for Mercedes 190E</h3>
+
+    <div class="buttons-wrapper">
+      <button class="collapsible" onclick="toggleSection('loweringSprings')">Lowering Springs</button>
+      <button class="collapsible" onclick="toggleSection('coilovers')">Coilovers</button>
+      <button class="collapsible" onclick="toggleSection('shocks')">Shocks</button>
+    </div>
+
+    <div class="content" id="loweringSprings">
+      <p>
+        Lowering springs are an excellent option for improving your car's handling and appearance. They lower the center of gravity, reducing body roll, and improving cornering performance. <p> One of the well-known brands for lowering springs is H&R Springs. They offer a range of options that can provide various levels of drop and performance improvement while maintaining a comfortable ride for daily driving.<p>
+
+        H&R Springs typically provide a lowering range of around 1.0 to 2.0 inches (25mm to 50mm) depending on the specific model and variant. Please note that the exact lowering amount may vary depending on the year and version of the Mercedes 190E, so it's essential to check the specifications for the specific H&R lowering spring set designed for your vehicle.<p>
+  
+        Other reputable brands for lowering springs include Eibach and Bilstein, both known for their high-quality lowering springs. As with H&R Springs, these brands offer different spring options tailored to various driving preferences and vehicle models, providing similar lowering ranges for the Mercedes 190E.
+      </p>
+    </div>
+
+    <div class="content" id="coilovers">
+      <p>
+        Coilovers are a more versatile suspension upgrade compared to just lowering springs. They consist of
+        adjustable dampers and springs, allowing you to fine-tune your car's ride height, damping, and stiffness. If
+        you want the ability to customize your suspension setup for both street driving and track use, coilovers are
+        the way to go. One of the top choices for Mercedes 190E coilovers is KW Suspensions. Their Variant 3
+        coilovers are highly regarded for their performance and adjustability. Another excellent brand to consider
+        is Öhlins, which offers premium coilover systems for enthusiasts seeking the best in handling and ride
+        quality.
+      </p>
+    </div>
+
+    <div class="content" id="shocks">
+      <p>
+        If you want to maintain the stock ride height of your Mercedes 190E but still improve its handling, upgrading
+        the shocks is a good option. High-performance shock absorbers can provide better damping control, resulting
+        in improved stability and comfort. Bilstein is a reputable brand known for producing high-quality shocks.
+        Their B8 series is specifically designed for performance applications and can work well with lowering springs
+        to enhance your car's handling capabilities. KONI is another respected brand that offers adjustable shock
+        absorbers, allowing you to fine-tune the damping to suit your preferences.
+      </p>
+    </div>
+  </div>
+  <div id="exhaust" class="body2">
+    <h3>Exhaust Upgrades for Mercedes 190E</h3>
+
+    <div class="buttons-wrapper">
+      <button class="collapsible" onclick="toggleSection('catback')">Cat-Back Exhaust</button>
+      <button class="collapsible" onclick="toggleSection('headers')">Headers</button>
+      <button class="collapsible" onclick="toggleSection('highflow')">High-Flow Catalytic Converter</button>
+    </div>
+  
+    <div class="content" id="catback">
+      <p class="info">
+        Upgrading the exhaust system is a popular way to improve the performance and sound of your Mercedes 190E.<p> One of the common exhaust upgrades is a Cat-Back Exhaust system. A Cat-Back Exhaust replaces the exhaust system from the catalytic converter to the rear of the vehicle. It typically includes the muffler, resonator, and exhaust pipes.<p>
+  
+        Cat-Back Exhaust systems are designed to reduce exhaust backpressure, which can improve engine efficiency and increase horsepower. Additionally, they often produce a more aggressive and sporty exhaust note, enhancing the overall driving experience.<p> Some well-known brands for Cat-Back Exhaust systems for the Mercedes 190E include Borla, MagnaFlow, and Remus.
+  
+      <p>  When installing a Cat-Back Exhaust, it's essential to ensure that the system is compatible with your specific model and year of the Mercedes 190E. This will ensure proper fitment and optimal performance.
+      </p>
+    </div>
+  
+    <div class="content" id="headers">
+      <p class="info">
+        Another exhaust upgrade option is Headers. Headers replace the stock exhaust manifold and are designed to improve exhaust gas flow from the engine's cylinders. They are typically constructed with mandrel-bent tubing for smoother airflow and reduced restrictions.<p>
+  
+        Headers can enhance engine performance by increasing horsepower and torque. They are particularly beneficial for high-revving engines like the Mercedes 190E's four-cylinder powerplants. By improving exhaust scavenging, headers can contribute to better throttle response and overall engine efficiency.<p>
+  
+        Brands like Megan Racing, DC Sports, and OBX Racing Sports offer performance headers designed for the Mercedes 190E. Just like with other exhaust upgrades, it's essential to choose headers that are compatible with your specific model and year to ensure proper fitment and performance gains.
+      </p>
+    </div>
+  
+    <div class="content" id="highflow">
+      <p class="info">
+        For enthusiasts looking to optimize both performance and environmental impact, a High-Flow Catalytic Converter is an attractive option. A High-Flow Catalytic Converter is designed to reduce exhaust backpressure while still effectively reducing harmful emissions. <p>
+  
+        High-flow catalytic converters use advanced catalytic materials and less restrictive designs to maintain compliance with emissions regulations while allowing for improved exhaust flow. By reducing backpressure, they can contribute to increased horsepower and torque.<p>
+  
+        Brands like MagnaFlow, Flowmaster, and Eastern Catalytic offer High-Flow Catalytic Converters for the Mercedes 190E. When choosing a high-flow catalytic converter, ensure that it meets the emissions requirements in your area and is compatible with your vehicle's specific year and model.
+      </p>
+    </div>
+    
+  </div>
+
+  <div id="wheels" class="body3">
+    <h3>Wheel Upgrades for Mercedes 190E</h3>
+
+  <div class="buttons-wrapper">
+    <button class="collapsible" onclick="toggleSection('forged')">Forged Wheels</button>
+    <button class="collapsible" onclick="toggleSection('alloy')">Alloy Wheels</button>
+    <button class="collapsible" onclick="toggleSection('wheelsize')">Choosing the Right Wheel Size</button>
+  </div>
+
+  <div class="content" id="forged">
+    <p class="info">
+      Forged wheels are a premium option for upgrading the wheels on your Mercedes 190E. They are crafted from a single piece of high-quality aluminum or other metals, using a forging process that involves intense pressure to create a wheel with excellent strength-to-weight ratio. <p>
+
+      The main advantage of forged wheels is their lightweight construction, which can reduce unsprung weight and improve overall vehicle performance. They are known for their durability and resistance to cracks and bends, making them ideal for high-performance driving and track use.<p>
+
+      Brands like BBS, HRE Performance Wheels, and ADV.1 offer a variety of forged wheel options for the Mercedes 190E. When considering forged wheels, be prepared for a higher cost compared to other wheel types, but the performance and aesthetics they offer are often worth the investment for enthusiasts seeking the best wheel upgrade.
+    </p>
+  </div>
+
+  <div class="content" id="alloy">
+    <p class="info">
+      Alloy wheels, also known as aluminum wheels, are a popular and practical upgrade for the Mercedes 190E. These wheels are made from a blend of aluminum and other lightweight metals, offering a good balance between performance, aesthetics, and cost-effectiveness. <p>
+
+      Alloy wheels are available in various designs and finishes, allowing you to customize the look of your Mercedes 190E. They are typically lighter than steel wheels, contributing to improved fuel efficiency and handling. <p>
+
+      Brands like Enkei, TSW Alloy Wheels, and OZ Racing provide a wide range of alloy wheel options that fit the Mercedes 190E. When choosing alloy wheels, consider factors such as size, offset, and bolt pattern to ensure proper fitment and compatibility with your specific vehicle model.
+    </p>
+  </div>
+
+  <div class="content" id="wheelsize">
+    <p class="info">
+      When upgrading the wheels on your Mercedes 190E, selecting the right wheel size is crucial for performance and aesthetics. The wheel size is typically expressed in inches and consists of the diameter, width, and offset. <p>
+
+      Larger wheels can enhance the vehicle's appearance and fill the wheel wells, giving the car a more aggressive stance. However, larger wheels may also impact ride comfort and handling. It's essential to strike a balance between aesthetics and functionality when choosing the wheel size. <p>
+
+      Consider factors like tire size compatibility, wheel offset, and potential modifications to the suspension when selecting the wheel size for your Mercedes 190E. Consulting with a knowledgeable wheel and tire specialist can help you find the best wheel size that suits your driving preferences and goals.
+    </p>
+  </div>
+    
+  </div>
+
+  <div id="bodykits" class="body4">
+    <h3>Body Kits for Mercedes 190E</h3>
+
+    <div class="buttons-wrapper">
+      <button class="collapsible" onclick="toggleSection('aerodynamics')">Aerodynamics Body Kits</button>
+      <button class="collapsible" onclick="toggleSection('widebody')">Wide Body Kits</button>
+      <button class="collapsible" onclick="toggleSection('paint')">Custom Paint and Vinyl Wraps</button>
+    </div>
+  
+    <div class="content" id="aerodynamics">
+      <p class="info">
+        Aerodynamics body kits are designed to improve the airflow around and underneath the Mercedes 190E. They typically include front and rear bumpers, side skirts, spoilers, and diffusers. These components are carefully designed to reduce drag, increase downforce, and enhance overall aerodynamic performance. <p>
+  
+        The benefits of aerodynamics body kits go beyond visual enhancements. They can improve high-speed stability, reduce lift, and enhance the vehicle's handling characteristics. Additionally, aerodynamics body kits can give the Mercedes 190E a more aggressive and sporty appearance.<p>
+  
+        Brands like AMG, Lorinser, and Carlsson offer aerodynamics body kits specifically designed for the Mercedes 190E. When choosing an aerodynamics body kit, consider the material (e.g., fiberglass, polyurethane), fitment, and the intended use of your vehicle to ensure that the kit meets your requirements.
+      </p>
+    </div>
+  
+    <div class="content" id="widebody">
+      <p class="info">
+        Wide body kits are a bold and attention-grabbing upgrade for the Mercedes 190E. They consist of extended fenders, wider bumpers, and side skirts, creating a wider stance for the vehicle. Wide body kits not only provide a more aggressive look but also allow for wider wheels and tires, improving grip and cornering performance. <p>
+  
+        Wide body conversions are often sought after by car enthusiasts who want a unique and head-turning appearance for their Mercedes 190E. The wider body panels create a more muscular and performance-oriented look. <p>
+  
+        When considering a wide body kit, it's essential to work with a reputable body shop or installer experienced in performing such modifications. Additionally, ensure that the kit's fitment and quality meet your expectations, as wide body conversions require precision and attention to detail.
+      </p>
+    </div>
+  
+    <div class="content" id="paint">
+      <p class="info">
+        Custom paintwork and vinyl wraps offer a versatile way to personalize the appearance of your Mercedes 190E. With a wide range of colors, finishes, and designs available, you can create a unique and eye-catching look for your vehicle.<p>
+  
+        Custom paint jobs can range from subtle color changes to intricate graphics and designs. Vinyl wraps, on the other hand, provide a temporary and reversible way to change the vehicle's appearance without affecting the original paintwork.<p>
+  
+        Brands like 3M, Avery Dennison, and XPEL offer high-quality vinyl wrap materials suitable for the Mercedes 190E. For custom paintwork, working with experienced automotive painters will ensure the best results. <p>
+  
+        Whether you prefer a factory-fresh look or a head-turning custom design, custom paintwork and vinyl wraps allow you to express your personal style and make your Mercedes 190E stand out from the crowd.
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="gallery">
+    <div class="gallText">Shop</div>
+    <a href="https://eibachshop.com/index.php?p1283,eibach-pro-kit-springs-mercedes-benz-190" target="_blank"><img src="Images/eibach.jpg"></a>
+    <a href="https://www.scarles.co.nz/products/yellowspeed-coilovers-mercedes-benz-190-series-w201-82-93-v2" target="_blank"><img src="/Images/coilovers.jpg"></a> <!--https://www.scarles.co.nz/products/yellowspeed-coilovers-mercedes-benz-190-series-w201-82-93-v2-->
+    <a href="https://www.fcpeuro.com/products/mercedes-sport-shock-kit-w201-w124-bilstein-w124b8kit" target="_blank"><img src="Images/bilstein.jpg"></a>
+    <a href="https://www.supersprint.com/ww-en/mercedes-w201-190e-v1/sport-exhaust-supersprint-mercedes-w201-190-e-26-amg/172902-front-exhaust.aspx#!/" target="_blank"><img src="/Images/exhaust.jpg"></a>
+    <a href="https://www.supersprint.com/ww-en/mercedes-w201-190e-v1/sport-exhaust-supersprint-mercedes-w201-190-e-26-amg/840701-manifold.aspx#!/" target="_blank"><img src="Images/headers.jpg"></a>
+    <a href="https://www.mbtuningworldwide.com/products/w201-evo-ii-bodykit/" target="_blank"><img src="Images/evo2kit.jpg"></a>
+</div>
+
+  <div id="wheels" class="news">
+        Wheels
+        <a href="http://127.0.0.1:5500/Images/wheel1.jpg"target="_blank"><img src="/Images/wheel1.jpg"></a> <!--https://www.usedvictoria.com/car-wheels-tires/32777250 -->
+        <a href="http://127.0.0.1:5500/Images/wheel2.jpg"target="_blank"><img src="/Images/wheel2.jpg"></a> <!--https://bringatrailer.com/listing/mercedes-amg-aero-iii-oz-racing-wheels/-->
+        <a href="http://127.0.0.1:5500/Images/wheel3.jpg"target="_blank"><img src="/Images/wheel3.jpg"></a> <!--https://www.rooneywheel.com/product/bbs-rs-005/-->
+        <a href="http://127.0.0.1:5500/Images/wheel4.jpg"target="_blank"><img src="/Images/wheel4.jpg"></a> <!--https://www.antonenko555.com/wheels/oz-rally-racing-5x100-15x5j-et38-magnesium-5kg/-->
+        <a href="http://127.0.0.1:5500/Images/wheel5.jpg"target="_blank"><img src="/Images/wheel5.jpg"></a> <!--https://www.benzworld.org/threads/wtb-ceginus-evo-ii-17-x-7-5-wheels.2750482/-->
+        <a href="http://127.0.0.1:5500/Images/wheel6.jpg"target="_blank"><img src="/Images/wheel6.jpg"></a> <!--https://www.threepiece.us/bbs-lm-5x114-3-17x12-5-20-17x13-5-4/-->
+        <a href="http://127.0.0.1:5500/Images/wheel7.jpg"target="_blank"><img src="/Images/wheel7.jpg"></a> <!--https://thembmarket.com/brabus-monoblock-ii-blade-wheels-->
+   
+  </div>
+
+  <div class="footer">
+    Temp Text.
+  </div>
+
+
+</body>
+
+</html>
