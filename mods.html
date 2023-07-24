@@ -7,6 +7,7 @@
 </head>
 
 <script>
+    //Button java
 function toggleSection(sectionId) {
   var content = document.getElementById(sectionId);
   var contents = document.getElementsByClassName('content');
@@ -16,6 +17,7 @@ function toggleSection(sectionId) {
      
       if (content.style.display === 'block') {
         content.style.display = 'none';
+        //if you click another button while showing another button it will replace instead of add on to the end
       } else {
         content.style.display = 'block';
       }
@@ -58,10 +60,10 @@ function toggleSection(sectionId) {
     <a href="maintain.html">Maintain</a>
     <a href="help.html">Help</a>
   </nav>
-
+<!--Suspension-->
   <div class="body1">
     <h3>Suspension Upgrades for Mercedes 190E</h3>
-
+    <!--buttons for body1-->
     <div class="buttons-wrapper">
       <button class="collapsible" onclick="toggleSection('loweringSprings')">Lowering Springs</button>
       <button class="collapsible" onclick="toggleSection('coilovers')">Coilovers</button>
@@ -101,9 +103,10 @@ function toggleSection(sectionId) {
       </p>
     </div>
   </div>
+  <!--Exhaust-->
   <div id="exhaust" class="body2">
     <h3>Exhaust Upgrades for Mercedes 190E</h3>
-
+<!--Exhaust buttons-->
     <div class="buttons-wrapper">
       <button class="collapsible" onclick="toggleSection('catback')">Cat-Back Exhaust</button>
       <button class="collapsible" onclick="toggleSection('headers')">Headers</button>
@@ -141,10 +144,10 @@ function toggleSection(sectionId) {
     </div>
     
   </div>
-
+<!--Wheels-->
   <div id="wheels" class="body3">
     <h3>Wheel Upgrades for Mercedes 190E</h3>
-
+<!--Wheel buttons-->
   <div class="buttons-wrapper">
     <button class="collapsible" onclick="toggleSection('forged')">Forged Wheels</button>
     <button class="collapsible" onclick="toggleSection('alloy')">Alloy Wheels</button>
@@ -182,10 +185,10 @@ function toggleSection(sectionId) {
   </div>
     
   </div>
-
+<!--Bodykits-->
   <div id="bodykits" class="body4">
     <h3>Body Kits for Mercedes 190E</h3>
-
+<!--Body kit buttons-->
     <div class="buttons-wrapper">
       <button class="collapsible" onclick="toggleSection('aerodynamics')">Aerodynamics Body Kits</button>
       <button class="collapsible" onclick="toggleSection('widebody')">Wide Body Kits</button>
@@ -225,9 +228,10 @@ function toggleSection(sectionId) {
     </div>
     
   </div>
-
+<!--Gallery-->
   <div class="gallery">
     <div class="gallText">Shop</div>
+    <!--Gallery images with sources -->
     <a href="https://eibachshop.com/index.php?p1283,eibach-pro-kit-springs-mercedes-benz-190" target="_blank"><img src="Images/eibach.jpg" alt="Eibach branded lowering springs set of 4"></a>
     <a href="https://www.scarles.co.nz/products/yellowspeed-coilovers-mercedes-benz-190-series-w201-82-93-v2" target="_blank"><img src="/Images/coilovers.jpg" alt="yellow speed coilovers set of 4 "></a> <!--https://www.scarles.co.nz/products/yellowspeed-coilovers-mercedes-benz-190-series-w201-82-93-v2-->
     <a href="https://www.fcpeuro.com/products/mercedes-sport-shock-kit-w201-w124-bilstein-w124b8kit" target="_blank"><img src="Images/bilstein.jpg" alt="Bilstein yellow shocks absorber"></a>
@@ -236,8 +240,9 @@ function toggleSection(sectionId) {
     <a href="https://www.mbtuningworldwide.com/products/w201-evo-ii-bodykit/" target="_blank"><img src="Images/evo2kit.jpg" alt="Body peices for 190e EVO2 body kit on floor"></a>
 </div>
 
-  <div id="wheels" class="news">
+  <div id="wheels" class="leftBar">
         Wheels
+        <!--Left bar wheels with sources -->
         <a href="http://127.0.0.1:5500/Images/wheel1.jpg"target="_blank"><img src="/Images/wheel1.jpg" alt="Monoblocks"></a> <!--https://www.usedvictoria.com/car-wheels-tires/32777250 -->
         <a href="http://127.0.0.1:5500/Images/wheel2.jpg"target="_blank"><img src="/Images/wheel2.jpg" alt="Aero 3 Monoblocks"></a> <!--https://bringatrailer.com/listing/mercedes-amg-aero-iii-oz-racing-wheels/-->
         <a href="http://127.0.0.1:5500/Images/wheel3.jpg"target="_blank"><img src="/Images/wheel3.jpg" alt="BBS RS Wheels"></a> <!--https://www.rooneywheel.com/product/bbs-rs-005/-->
@@ -247,9 +252,9 @@ function toggleSection(sectionId) {
         <a href="http://127.0.0.1:5500/Images/wheel7.jpg"target="_blank"><img src="/Images/wheel7.jpg" alt="Brabus 3 spoke wheels"></a> <!--https://thembmarket.com/brabus-monoblock-ii-blade-wheels-->
    
   </div>
-
+<!--Footer!-->
   <div class="footer">
-    Temp Text.
+    Created by Tobey Beckley 2023, for any questions please contact tobey.beckley@sbhsstudent.school.nz
   </div>
 
 

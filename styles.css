@@ -1,3 +1,4 @@
+/*Font input*/
 @font-face {
   font-family: RaceSport;
   src: url(Fonts/RaceSport.ttf);
@@ -20,7 +21,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
+/*Navigation bar styles and grid location*/
 nav {
   border: 5px solid #224968;
   border-radius: 8px;
@@ -32,7 +33,7 @@ nav {
 }
 
 
-
+/*Nagiation link styles*/
 nav a {
   font-family: RaceSport;
   color: white;
@@ -48,6 +49,7 @@ nav a:hover {
 
 }
 
+/*Drop down box for history and mods navigation text*/
 .dropdown {
   position: relative;
   display: inline-block;
@@ -82,6 +84,7 @@ nav a:hover {
   display: block;
 }
 
+/*Animation for dropdown box*/
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -94,10 +97,12 @@ nav a:hover {
   }
 }
 
+/*shows what tab you are own via chanigng the colour*/
 #currentTab {
   color: #316691;
 }
 
+/*Body1 Styles*/
 .body1 {
   display: flex;
   justify-content: center;
@@ -113,6 +118,7 @@ nav a:hover {
   align-items: center;
 }
 
+/*Body 2 styles*/
 .body2 {
   display: flex;
   justify-content: center;
@@ -126,7 +132,7 @@ nav a:hover {
   grid-row-gap: 20px;
   align-items: center;
 }
-
+ /*Body 4 styles*/
 .body3 {
   display: flex;
   justify-content: center;
@@ -142,7 +148,7 @@ nav a:hover {
 
 }
 
-
+/*Body 5 styles*/
 .body4 {
   display: flex;
   justify-content: center;
@@ -158,12 +164,13 @@ nav a:hover {
   align-items: center;
 }
 
+/*Easily changable styles across multiple ui, so if i want to adjust background opactiy i dont have to go through multiple style edits*/
 .body1,
 .body2,
 .body3,
 .body4,
 .gallery,
-.news {
+.leftBar {
   font-family: CenturyGothic;
   background-color: rgba(0, 0, 0, .50);
   border: 5px solid #224968;
@@ -174,6 +181,7 @@ nav a:hover {
   overflow: auto;
 }
 
+/*Gallery styles */
 .gallery {
   font-family: RaceSport;
   grid-column: 4/5;
@@ -187,7 +195,7 @@ nav a:hover {
   overflow-y: visible;
   
 }
-
+/*Gallery image styles*/
 .gallery img {
   border: 5px solid #224968;
   border-radius: 8px;
@@ -197,6 +205,7 @@ nav a:hover {
   transition: all 0.3s
 }
 
+/*Responsivness for gallery images */
 @media (max-width: 600px) {
   .gallery img {
     width: 80%;
@@ -215,7 +224,8 @@ nav a:hover {
 
 }
 
-.news {
+/*left side bar styles*/
+.leftBar {
   font-family: RaceSport;
   grid-column: 2/3;
   grid-row: 2/6;
@@ -227,7 +237,9 @@ nav a:hover {
   align-items: center;
   overflow-y: auto;
 }
+ 
 
+/*Bottom ui styles*/
 .footer {
   grid-column: 2/5;
   grid-row: 6/7;
@@ -238,9 +250,9 @@ nav a:hover {
   text-decoration: underline;
 
 }
-
+/*253-300 is history "showmore" button*/
 #start.collapse,
-#dtmHistory.collapse {
+#dtmHistory.collapse { /*Set how much text shows default before showmore is clicked*/
   max-height: 100px;
   overflow: hidden;
 }
@@ -314,7 +326,7 @@ nav a:hover {
 
 
 
-
+/*history table styles*/
 table {
   width: 80%;
   height: 60%;
@@ -344,7 +356,7 @@ tr:nth-child(even) {
   list-style: none;
   padding: 0;
 }
-
+/*Left side bar styles*/
 .timeline li {
   margin-bottom: 20px;
   font-size: 14px;
@@ -355,14 +367,14 @@ tr:nth-child(even) {
   font-size: 14px;
   font-family: RaceSport;
 }
-
+/*Mods buttons for information*/
 .buttons-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
   justify-content: center;
 }
-
+/*button styles*/
 .buttons-wrapper button {
   border-radius: 10px;
   font-family: CenturyGothic;
@@ -370,23 +382,19 @@ tr:nth-child(even) {
   background-color: #224968;
   color: white;
   padding: 4px 10px;
-  /* Enlarging the buttons */
   border: 1px solid transparent;
-  /* Adding a transparent border */
   transition: all 0.3s;
-  /* Adding smooth transition effect */
 
 }
-
-.body2 .buttons-wrapper button,
-.body3 .buttons-wrapper button,
-.body4 .buttons-wrapper button {
-  padding: 4px 6px;
+.body1 .buttons-wrapper button {
+  padding: 10px 10px;
 }
+
+
 
 .buttons-wrapper button:hover {
   transform: scale(1.075);
-  /* Enlarging the buttons on hover */
+  /* enlarging the buttons when hover */
 }
 
 .collapsible {
@@ -415,8 +423,8 @@ tr:nth-child(even) {
   font-family: CenturyGothic;
 
 }
-
-.news img {
+/*Image styles for left bar (used for mods.html)*/
+.leftBar img {
   width: 75%;
   transition: all 0.3s;
   margin-top: 10px;
@@ -424,15 +432,18 @@ tr:nth-child(even) {
   border-radius: 5px;
 
 }
-
-.news img:hover {
+/*on hover inlargen animation*/
+.leftBar img:hover {
 
   transform: scale(1.05);
 }
 
-.news h3 {
-  font-size: 16px;
+.leftBar h3 {
+  font-size: 22px;
+
 }
+
+/*Index fast facts styles*/
 
 .fast-facts {
   list-style: none;
